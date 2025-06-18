@@ -16,7 +16,7 @@
 
 # venv
 lib/python3.13
-lib64
+lib64/
 include/
 bin/
 pyvenv.cfg

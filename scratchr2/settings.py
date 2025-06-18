@@ -18,7 +18,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-8x)ul%e3irhhdl8gtw8s(utct143pjsx9u5dnb^7)slcf&9zt+'
+SECRET_KEY = 'insecure'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -115,7 +115,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = 'scratchr2/static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
@@ -157,7 +157,7 @@ ACCOUNT_LOGOUT_ON_GET = True
 ACCOUNT_EMAIL_REQUIRED = True
 
 # ScratchR2 settings
-ROOT_URL = '/scratchr2'
+ROOT_URL = '/'
 WIKI_ROOT = ROOT_URL
 WIKI_URL = WIKI_ROOT + '/wiki'
 

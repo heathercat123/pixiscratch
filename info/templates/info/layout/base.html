@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block body-class %}help{% endblock %}
 
 {% block css %}
-  <link href="{{ STATIC_URL }}/css/pages/help.css" rel="stylesheet">
+  <link href="{% static 'css/pages/help.css' %}" rel="stylesheet">
 {% endblock %}

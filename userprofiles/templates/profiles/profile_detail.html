@@ -1,13 +1,14 @@
 {# TODO: Get rid of placeholders #}
 
 {% extends 'base.html' %}
+{% load static %}
 {% load i18n %}
 
 {% block css %}
     {{ block.super }}
-	<link href="{{ STATIC_URL }}/css/pages/profile.css" rel="stylesheet"/>
-	<link href="{{ STATIC_URL }}/css/pages/scratcher_promotion.css" rel="stylesheet"/>
-	<link href="{{ STATIC_URL }}/css/modules/modal.css" rel="stylesheet"/>
+	<link href="{% static 'css/pages/profile.css' %}" rel="stylesheet"/>
+	<link href="{% static 'css/pages/scratcher_promotion.css' %}" rel="stylesheet"/>
+	<link href="{% static 'css/modules/modal.css' %}" rel="stylesheet"/>
 {% endblock %}
 
 {% block init_data %}
@@ -33,7 +34,7 @@ Scratch.INIT_DATA.ADMIN_PANEL = {
   <div class="box-head">
     <form id="profile-avatar" class="portrait">
       <div class="avatar">
-      <a href="{% url profile_detail 'test' %}">
+      <a href="{% url 'profile_detail' 'test' %}">
         <img src="//cdn2.scratch.mit.edu/get_image/user/default_60x60.png" width="55" height="55"/>
         <div class="loading-img s48"></div>
       </a>
@@ -202,8 +203,8 @@ Scratch.INIT_DATA.ADMIN_PANEL = {
 {% endblock %}
 
 {% block js %}
-<script src="{{ STATIC_URL }}/js/swfobject.js"></script>
-<script src="{{ STATIC_URL }}/js/apps/project/scratch_app.js"</script>
+<script src="{% static 'js/swfobject.js' %}"></script>
+<script src="{% static 'js/apps/project/scratch_app.js' %}"</script>
 <script>Scratch.profileHasFeatured = false</script>
 
 <script>
@@ -406,13 +407,13 @@ Scratch.INIT_DATA.ADMIN_PANEL = {
 {% endblock %}
 
 {% block js2 %}
-<script src="{{ STATIC_URL }}/js/lib/jquery.ui.widget.js"></script>
-<script src="{{ STATIC_URL }}/js/lib/blueimp-jquery-file-upload/jquery.iframe-transport.js"></script>
-<script src="{{ STATIC_URL }}/js/lib/blueimp-jquery-file-upload/jquery.fileupload.js"></script>
-<script src="{{ STATIC_URL }}/js/apps/userprofile/main.js"></script>
-<script src="{{ STATIC_URL }}/js/apps/userprofile/models.js"></script>
-<script src="{{ STATIC_URL }}/js/apps/userprofile/views.js"></script>
-<script src="{{ STATIC_URL }}/js/apps/userprofile/models/user-detail.js"></script>
+<script src="{% static 'js/lib/jquery.ui.widget.js' %}"></script>
+<script src="{% static 'js/lib/blueimp-jquery-file-upload/jquery.iframe-transport.js' %}"></script>
+<script src="{% static 'js/lib/blueimp-jquery-file-upload/jquery.fileupload.js' %}"></script>
+<script src="{% static 'js/apps/userprofile/main.js' %}"></script>
+<script src="{% static 'js/apps/userprofile/models.js' %}"></script>
+<script src="{% static 'js/apps/userprofile/views.js' %}"></script>
+<script src="{% static 'js/apps/userprofile/models/user-detail.js' %}"></script>
 {% endblock %}
 
 {% block admin-content %}
