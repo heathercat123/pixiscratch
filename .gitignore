@@ -1,44 +1,22 @@
-# If you don't see the part of ScratchR2 that isn't included here
-# that you're looking for, check in the gitignore for HeatherscratchR
-
 # Databases
 *.sqlite3
 *.sqlite3-journal
 
-# This is source code, we shouldn't include compiled files
-*.pyc
-
-# From s2forums
+# Compiled code
 *.py[co]
-*.egg-info
-/s2forums/.pydevproject
-/s2forums/.project
-/s2forums/.settings
-*.db
-*.json
-*.log
-*~
-/s2forums/local_settings.py
-/s2forums/.env
-/s2forums/build/
-/s2forums/dist/
 
-/.pydevproject
-.project
-.settings
-.env
-build/
-dist/
-
-# Contains local settings such as database info
-# To set it up, rename local_settings.default.py
-/scratchr2/local_settings.py
-
-# Static files for Django Admin.
-# Not a part of this repository.
-/static/admin/
+# Local settings
+# Copy local_settings.default.py to acquire it
+/scratchr2/local_settings
 
 # Locales
-# Not a part of this repository.
+# Stored on another repo
 /scratchr2/locale/
 /scratchr2_translations/
+
+# venv
+lib/python3.13
+lib64
+include/
+bin/
+pyvenv.cfg
