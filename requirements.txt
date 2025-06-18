@@ -2,13 +2,11 @@ requests
 httpagentparser
 akismet
 celery
-Django==1.4
+Django
 django_replicated
-django-fsm==1.5.1
-django-haystack==2.0.0
+django-fsm
+django-haystack
 south
 pygments
-postmarkup
-django-pagination
 pillow
 pymysql

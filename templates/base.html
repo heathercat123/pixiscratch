@@ -160,9 +160,9 @@ Scratch.INIT_DATA.IS_SOCIAL = true;
       
       <div id="topnav">
         <div class="container">
-          <a href="{% url home %}" class="logo"><span class="scratch"></span></a>
+          <a href="{% url 'home' %}" class="logo"><span class="scratch"></span></a>
           <ul class="site-nav">
-            <li><a id="project-create" href="{{ settings.ROOT_URL}}/projects/editor/?tip_bar=getStarted">{% trans "Create" %}</a></li><li><a href="{{ settings.ROOT_URL}}/explore/?date=this_month">{% trans "Explore" %}</a></li><li><a href="{{ settings.ROOT_URL }}/discuss">{% trans "Discuss" %}</a></li><li class="last"><a href="{% url help %}">{% trans "Help" %}</a></li>
+            <li><a id="project-create" href="{{ settings.ROOT_URL}}/projects/editor/?tip_bar=getStarted">{% trans "Create" %}</a></li><li><a href="{{ settings.ROOT_URL}}/explore/?date=this_month">{% trans "Explore" %}</a></li><li><a href="{{ settings.ROOT_URL }}/discuss">{% trans "Discuss" %}</a></li><li class="last"><a href="{% url 'help' %}">{% trans "Help" %}</a></li>
           </ul>
             
             <form class="search" action="{{ settings.ROOT_URL}}/search/google_results/" method="get" class="search">

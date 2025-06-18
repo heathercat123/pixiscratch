@@ -1,9 +1,9 @@
-from django.conf.urls import url
+from django.urls import path
 from . import views
 
 urlpatterns = [
-    url(r'^modal-registration/$', views.modal_registration, name="modal-registration"),
-    url(r'^check_username/(?P<username>.+)/$', views.check_username, name="check_username"),
-    url(r'^logout/$', views.modal_registration, name="logout"),  # stub
-    url(r'^email_resend/$', views.verify_email_popup, name="verify_email_popup"),
+    path('modal-registration/', views.modal_registration, name="modal-registration"),
+    path('check_username/<str:username>/', views.check_username, name="check_username"),
+    path('logout/', views.modal_registration, name="logout"),  # stub
+    path('email_resend/', views.verify_email_popup, name="verify_email_popup"),
 ]

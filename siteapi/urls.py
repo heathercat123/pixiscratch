@@ -1,8 +1,8 @@
-from django.conf.urls import url
+from django.urls import path
 from . import views
 
 
 urlpatterns = [
-    url(r'^comments/user/(?P<username>.+)/$', views.usercomments, name="usercomments"),
-    url(r'^comments/with-deleted/user/(?P<username>.+)/$', views.usercomments, name="usercomments-withdeleted"),
+    path('comments/user/<str:username>/', views.usercomments, name="usercomments"),
+    path('comments/with-deleted/user/<str:username>/', views.usercomments, name="usercomments-withdeleted"),
 ]

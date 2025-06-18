@@ -1,8 +1,8 @@
-from django.conf.urls import url, include
+from django.urls import path
 from . import views
 
 
 urlpatterns = [
-    url(r'^(?P<pk>\d+)/editor/$', views.editor),
-    url(r'editor/$', views.editor, name="editor"),
+    path('<int:pk>/editor/', views.editor),
+    path('editor/', views.editor, name="editor"),
 ]

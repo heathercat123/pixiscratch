@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 from django.views.decorators.csrf import ensure_csrf_cookie
-from django.utils import simplejson as json
+import json
 
 
 def error404(request, exception):
@@ -69,14 +69,14 @@ def homepage(request):
     return render(request, "homepage/index.html", context)
 
 
-def forgot_settings_1(request):
+def forgot_settings_1(request, exception):
     """
     Render the page for when the user did not upgrade from database.py to LocalSettings.py
     """
     return render(request, "heather/forgot_settings_1.html")
 
 
-def forgot_settings_2(request):
+def forgot_settings_2(request, exception):
     """
     Render the page for when the user did not set up any local settings
     """

@@ -1,6 +1,6 @@
-from django.conf.urls import url
+from django.urls import path
 from . import views
 
 urlpatterns = [
-    url(r'account-nav.json', views.account_nav, name="account_nav"),
+    path('account-nav.json', views.account_nav, name="account_nav"),
 ]
