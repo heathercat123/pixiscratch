@@ -23,7 +23,6 @@ urlpatterns += [
         url(r'^forgotsettings2/$', views.forgot_settings_2),
 
         # Apps
-        url(r'^discuss/', include('djangobb_forum.urls', namespace='djangobb')),
         url(r'^projects/', include("projects.urls")),
         url(r'^news/', include("news.urls")),
         url(r'^site-api/', include("siteapi.urls")),

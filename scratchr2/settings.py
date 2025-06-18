@@ -8,13 +8,7 @@ unless you want to contribute them to the public repo
 """
 
 import os
-
-# Required to load DjangoBB
 import sys
-sys.path.append('../djangobb_forum')
-
-# DjangoBB settings
-from djangobb_forum.scratchr2_settings import *
 
 # Django replicated settings
 from django_replicated.settings import *
@@ -190,10 +184,6 @@ MIDDLEWARE_CLASSES = (
 
     # 3rd party
     'pagination.middleware.PaginationMiddleware',
-
-    # HeatherscratchR2
-    'djangobb_forum.middleware.LastLoginMiddleware',
-    'djangobb_forum.middleware.UsersOnline',
 )
 
 ROOT_URLCONF = 'scratchr2.urls'
@@ -218,7 +208,6 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.request',
 
     # HeatherscratchR2
-    'djangobb_forum.context_processors.forum_settings',
     'scratchr2.context_processors.settings',
 )
 
@@ -241,7 +230,6 @@ INSTALLED_APPS = (
     'haystack',
 
     # HeatherscratchR2 apps
-    'djangobb_forum',
     'base_comments',
     'accounts',
     'userprofiles',
