@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block css %}
+    {{ block.super }}
+	<!-- templates/homepage/index.html block css -->
+	<link href="{{ STATIC_URL }}/css/pages/homepage.css" rel="stylesheet" type="text/css"/>
+	<!-- end templates/homepage/index.html block css -->
+{% endblock css %} 
+
+{% block main-content %}
+<!-- templates/homepage/index.html block main-content -->
+
+
+
+<div class="homepage-banner clearfix">
+  <div class="cols clearfix">
+    <div class="intro col-10">
+	    <h1 class="title">{% trans "Create stories, games, and animations" %}<br/>{% trans "Share with others around the world" %}</h1>
+      <a id="orange-char" class="char" href="{{ settings.ROOT_URL}}/projects/editor/?tip_bar=getStarted">
+        <img class="img-a" src="{{ STATIC_URL }}/images/cat-a.png">
+        <img class="img-b" src="{{ STATIC_URL }}/images/cat-b.png">
+        <div class="circle"></div>
+        <div class="text">{% trans "TRY IT OUT" %}</div>
+      </a>
+      <a id="blue-char" class="char" href="{{ settings.ROOT_URL}}/starter_projects">
+        <img class="img-a" src="{{ STATIC_URL }}/images/tera-a.png">
+        <img class="img-b" src="{{ STATIC_URL }}/images/tera-b.png">
+        <div class="circle"></div>
+        <div class="text">{% trans "SEE EXAMPLES" %}</div>
+      </a>
+      <a id="yellow-char" data-control="registration" class="char" href="#">
+        <img class="img-a" src="{{ STATIC_URL }}/images/gobo-a.png">
+        <img class="img-b" src="{{ STATIC_URL }}/images/gobo-b.png">
+        <div class="circle"></div>
+        <div class="text">{% trans "JOIN SCRATCH" %}</div>
+        <div class="text subtext">( {% trans "it's free" %} )</div>
+      </a>
+      <div class="subtext">{% blocktrans with PROJECT_COUNT=projcount %}A creative learning community with <span class="projcount">{{ PROJECT_COUNT }}</span> projects shared{% endblocktrans %}</div>
+      <div class="links">
+        <a href="{{ settings.ROOT_URL}}/about">{% trans "ABOUT SCRATCH" %}</a>
+        <a href="{{ settings.ROOT_URL}}/educators">{% trans "FOR EDUCATORS" %}</a>
+        <a class="last" href="{{ settings.ROOT_URL}}/parents">{% trans "FOR PARENTS" %}</a>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="video">
+        <div class="play-button"></div>
+        <img src="{{ STATIC_URL }}/images/hp-video-screenshot.png"/>
+      </div>
+    </div>
+  </div>
+</div>
+
+{# TODO: Get rid of PLACEHOLDER #}
+<a name="community_featured_projects" style="display: block; height: 60px; margin-top:-60px"></a>
+{% trans 'Featured Projects' as featuredtext %}
+{% include 'carousel/carousel.html' with title=featuredtext projects=featuredprojects id='featured' %}
+
+<a name="community_featured_studios" style="display: block; height: 60px; margin-top:-60px"></a>
+{% trans 'Featured Studios' as featuredgalleriestext %}
+{% include 'carousel/carousel.html' with title=featuredgalleriestext galleries=featuredgalleries id='featured' %}
+
+<a name="curator_top_projects" style="display: block; height: 60px; margin-top:-60px"></a>
+{% trans 'Projects Curated by' as curatedtext %}
+{% trans 'Learn more' as learnmoretext %}
+{% include 'carousel/carousel.html' with title=curatedtext|add:' PLACEHOLDER' projects=curated viewall='http://scratch.mit.edu/studios/386359/' viewalltext=learnmoretext id='featured' %}
+
+<a name="scratch_design_studio" style="display: block; height: 60px; margin-top:-60px"></a>
+{% trans 'Scratch Design Studio' as sdstext %}
+{% trans 'Visit the studio' as visittext %}
+{% include 'carousel/carousel.html' with title=sdstext|add:' - "PLACEHOLDER"' projects=sds viewall='/studios/PLACEHOLDER/' viewalltext=visittext id='featured' %}
+
+<a name="community_most_remixed_projects" style="display: block; height: 60px; margin-top:-60px"></a>
+{% trans 'What the Community is Remixing' as remixestext %}
+{% include 'carousel/carousel.html' with title=remixestext projects=remixes id='remixes' %}
+
+<a name="community_most_loved_projects" style="display: block; height: 60px; margin-top:-60px"></a>
+{% trans 'What the Community is Loving' as lovestext %}
+{% include 'carousel/carousel.html' with title=lovestext projects=loves id='loves' %}
+{% endblock %}
+
+{% block js %}
+<script>
+
+sessionStorage.removeItem("gallery_id")
+sessionStorage.removeItem("explore_by")
+</script>
+<script type="text/javascript" src="{{ STATIC_URL }}/js/homepage.js"></script>
+{% endblock %}
+
+{% block extra-modals %}
+<div class="modal hide fade in" id="modal-video">
+  <a href="#" data-dismiss="" class="close">x</a>
+  <iframe id="vimeo-vid" src="http://player.vimeo.com/video/65583694?title=0&amp;byline=0&amp;portrait=0" width="570" height="357" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+</div>
+{% endblock %}
